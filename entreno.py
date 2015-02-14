@@ -5,8 +5,7 @@
 
 print "¡Bienvenido a la interfaz de introducción de datos de entrenamiento! \n"
 
-
-def semana_in():
+def semana_in():	
 
 	semana=raw_input("Por favor, introduzca la semana correspondiente a los valores a añadir(valor numérico): ")
 
@@ -17,4 +16,8 @@ def semana_in():
 	else:
 
 		print "Semana incorrecta, introduzcala como se indica"
+		#Si la semana introducida es incorrecta, se vuelve a llamar a la función semana_in. 
+		semana_in()
+
+semana_in()
 
