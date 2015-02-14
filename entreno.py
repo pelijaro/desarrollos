@@ -78,7 +78,7 @@ def dominadas():
 		global pdominadas
 		pdominadas.append(peso)
 		
-#def remo_menton():
+def remo_menton():
 
 	print "Por favor, introduzca los valores de las tres series de remo menton de la semana "+semana+": "
 	
@@ -90,7 +90,7 @@ def dominadas():
 		global premo_menton
 		premo_menton.append(peso)
 		
-#def sentadilla_hack():
+def sentadilla_hack():
 
 	print "Por favor, introduzca los valores de las tres series de sentadilla hack de la semana "+semana+": "
 	
@@ -102,7 +102,7 @@ def dominadas():
 		global psentadilla_hack
 		psentadilla_hack.append(peso)
 		
-#def remo_punta():
+def remo_punta():
 
 	print "Por favor, introduzca los valores de las tres series de remo en punta de la semana "+semana+": "
 	
@@ -114,7 +114,7 @@ def dominadas():
 		global premo_punta
 		premo_punta.append(peso)
 
-#def curl_biceps():
+def curl_biceps():
 
 	#Introducir en un futuro la opcion de los claster, que al meter las repes calcule los cluster, etc..
 	
@@ -128,7 +128,7 @@ def dominadas():
 		global pcurl_biceps
 		pcurl_biceps.append(peso)
 
-#def jalon_pecho():
+def jalon_pecho():
 
 	print "Por favor, introduzca los valores de las tres series de jalon de pecho de la semana "+semana+": "
 	
@@ -140,7 +140,7 @@ def dominadas():
 		global pjalon_pecho
 		pjalon_pecho.append(peso)
 		
-#def extension_cuadri():
+def extension_cuadri():
 
 	print "Por favor, introduzca los valores de las tres series de extension de cuadriceps de la semana "+semana+": "
 	
@@ -152,7 +152,7 @@ def dominadas():
 		global pextension_cuadri
 		pextension_cuadri.append(peso)
 
-#def curl_femoral():
+def curl_femoral():
 
 	print "Por favor, introduzca los valores de las tres series de curl femoral de la semana "+semana+": "
 	
@@ -164,7 +164,7 @@ def dominadas():
 		global pcurl_femoral
 		pcurl_femoral.append(peso)
 		
-#def triceps_polea_cabeza():
+def triceps_polea_cabeza():
 
 	print "Por favor, introduzca los valores de las tres series de triceps en polea por encima de la cabeza de la semana "+semana+": "
 	
@@ -176,7 +176,7 @@ def dominadas():
 		global ptriceps_polea_cabeza
 		ptriceps_polea_cabeza.append(peso)
 		
-#def encogimientos_mancu():
+def encogimientos_mancu():
 
 	print "Por favor, introduzca los valores de las tres series de encogimientos con mancuernas de la semana "+semana+": "
 	
