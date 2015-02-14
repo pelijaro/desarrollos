@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 def es_primo(numero):
-	
+ #comentario de prueba	
 	count=0
 
 	"""for d in range(numero,0, -1):
