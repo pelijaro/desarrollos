@@ -240,6 +240,8 @@ def formatea():
 
 	"""Como no sé cómo no sobreescribir en un fichero, lo tengo que formatear todo junto en vez de separado, cuando sepa como sobreescribir lo podre hacer por
 	separado"""
+	
+	sys.stdout = open('entreno.doc', 'w')
 
 	print "\nLunes:\n"
 	
@@ -279,7 +281,7 @@ def formatea():
 			
 			print pdominadas[p]+",",
 				
-	print "Remo al mentón con barra Z:",
+	print "Remo al menton con barra Z:",
 		
 	for p in range(len(premo_menton)):
 		
@@ -291,7 +293,7 @@ def formatea():
 			
 			print premo_menton[p]+",",
 	
-	print "\nMiércoles:\n"
+	print "\nMiercoles:\n"
 	
 	print "Press banca normal:",
 		
@@ -367,7 +369,7 @@ def formatea():
 			
 			print pjalon_pecho[p]+",",
 				
-	print "Extensión de cuadriceps:",
+	print "Extension de cuadriceps:",
 		
 	for p in range(len(pextension_cuadri)):
 		
@@ -391,7 +393,7 @@ def formatea():
 			
 			print pcurl_femoral[p]+",",
 			
-	print "Extensión de triceps en polea por encima de la cabeza:",
+	print "Extension de triceps en polea por encima de la cabeza:",
 		
 	for p in range(len(ptriceps_polea_cabeza)):
 		
