@@ -4,6 +4,7 @@ import sys
 #Script acepta valores de pesos de diferentes ejercicios, formatea datos y sale en un archivo preparado para enviar email
 
 semana=0
+mes=0
 #Implementar el numero de variables dinamicas
 series_0=2
 series_1=3
@@ -24,8 +25,26 @@ pencogimientos_mancu=[]
 
 print "¡Bienvenido a la interfaz de introducción de datos de entrenamiento! \n"
 
+def mes_in():
+
+	m=raw_input("Por favor, introduzca el mes correspondiente a los valores a añadir (valor numérico): ")
+	m=int(m)
+	if m<=0 or m>99:
+	
+		print "\nMes incorrecto, introduzcalo como se indica\n"
+		#Si el mes introducido es incorrecto, se vuelve a llamar a la función mes_in. 
+		mes_in()
+		
+	else:
+	
+		global mes
+		mes=m
+		
+		print "\nMes correcto\n"
+		
 def semana_in():	
-	#En esta función se define la semana de la que se están introduciendo valores
+	#En esta función se define el mes y la semana de la que se están introduciendo valores
+		
 	s=raw_input("Por favor, introduzca la semana correspondiente a los valores a añadir (valor numérico): ")
 
 	if (s=="1" or s=="2" or s=="3" or s=="4"):
@@ -42,7 +61,6 @@ def semana_in():
 		print "\nSemana incorrecta, introduzcala como se indica\n"
 		#Si la semana introducida es incorrecta, se vuelve a llamar a la función semana_in. 
 		semana_in()
-
 		
 def sentadilla():
 
@@ -416,7 +434,8 @@ def formatea():
 		else:
 			
 			print pencogimientos_mancu[p]+",",
-				
+
+mes_in()			
 semana_in()
 sentadilla()
 press_banca()
