@@ -258,8 +258,10 @@ def formatea():
 
 	"""Como no sé cómo no sobreescribir en un fichero, lo tengo que formatear todo junto en vez de separado, cuando sepa como sobreescribir lo podre hacer por
 	separado"""
+	global mes
+	mes=str(mes)
 	
-	sys.stdout = open("entreno_semana_"+semana+".doc", "w")
+	sys.stdout = open("entreno_mes"+mes+"_semana"+semana+".doc", "w")
 
 	print "\nLunes:\n"
 	
