@@ -6,9 +6,11 @@ import sys
 semana=0
 mes=0
 #Implementar el numero de variables dinamicas
-series_0=2
-series_1=3
-series_2=4
+series_2=2
+series_3=3
+series_4=4
+
+rdominadas=[]
 
 psentadilla=[]
 ppress_banca=[]
@@ -23,15 +25,15 @@ pcurl_femoral=[]
 ptriceps_polea_cabeza=[]
 pencogimientos_mancu=[]
 
-print "¡Bienvenido a la interfaz de introducción de datos de entrenamiento! \n"
+print "\n¡Bienvenido a la interfaz de introducción de datos de entrenamiento! \n"
 
 def mes_in():
 
-	m=raw_input("Por favor, introduzca el mes correspondiente a los valores a añadir (valor numérico): ")
+	m=raw_input("\nPor favor, introduzca el mes correspondiente a los valores a añadir (valor numérico): ")
 	m=int(m)
 	if m<=0 or m>99:
 	
-		print "\nMes incorrecto, introduzcalo como se indica\n"
+		print "\nMes incorrecto, introduzcalo como se indica"
 		#Si el mes introducido es incorrecto, se vuelve a llamar a la función mes_in. 
 		mes_in()
 		
@@ -40,12 +42,12 @@ def mes_in():
 		global mes
 		mes=m
 		
-		print "\nMes correcto\n"
+		print "\nMes correcto"
 		
 def semana_in():	
 	#En esta función se define el mes y la semana de la que se están introduciendo valores
 		
-	s=raw_input("Por favor, introduzca la semana correspondiente a los valores a añadir (valor numérico): ")
+	s=raw_input("\nPor favor, introduzca la semana correspondiente a los valores a añadir (valor numérico): ")
 
 	if (s=="1" or s=="2" or s=="3" or s=="4"):
 		
@@ -54,21 +56,21 @@ def semana_in():
 		global semana
 		semana=s
 
-		print "\nSemana correcta\n" #implementar la funcion que tenga que ir aqui, el print es de control
+		print "\nSemana correcta" #implementar la funcion que tenga que ir aqui, el print es de control
 
 	else:
 
-		print "\nSemana incorrecta, introduzcala como se indica\n"
+		print "\nSemana incorrecta, introduzcala como se indica"
 		#Si la semana introducida es incorrecta, se vuelve a llamar a la función semana_in. 
 		semana_in()
 		
 def sentadilla():
 
-	print "Por favor, introduzca los valores de las tres series de setandilla de la semana "+semana+": "
+	print "\nPor favor, introduzca los valores de las tres series de setandilla de la semana "+semana+": "
 	
-	for p in range(series_1):
+	for p in range(series_3):
 		
-		print "Introduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		global psentadilla
@@ -79,11 +81,11 @@ def press_banca():
 
 	#Definir en un futuro los distintos press banca
 	
-	print "Por favor, introduzca los valores de las tres series de press banca de la semana "+semana+": "
+	print "\nPor favor, introduzca los valores de las tres series de press banca de la semana "+semana+": "
 	
-	for p in range(series_1):
+	for p in range(series_3):
 	
-		print "Introduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		global ppress_banca
@@ -91,25 +93,45 @@ def press_banca():
 
 def dominadas():
 	
-	#Introducir en un futuro la opcion de meter el peso de lastre
+	if semana=="1":
 	
-	print "Por favor, introduzca los valores de las tres series de dominadas de la semana "+semana+": "
+		print "\nPor favor, introduzca el numero de repeticiones de cada serie de dominadas SIN LASTRE de la semana "+semana+": "
+		
+		for p in range(series_3):
+		
+			print "\nIntroduzca las repeticiones de la ", p+1,"º serie: "
+			peso=raw_input()
+			global rdominadas
+			rdominadas.append(peso)
+			
+	else:
+			
+		print "\nPor favor, introduzca los valores de las tres series de dominadas de la semana "+semana+": "
+		
+		print "\nPor favor, introduzca el numero de repeticiones de las ", series_3," series de dominadas de la semana "+semana+": "
 	
-	for p in range(series_1):
-	
-		print "Introduzca el ", p+1,"º peso: "
+		peso=raw_input()
+		
+		for p in range(series_3):
+		
+			rdominadas.append(peso)
+		
+		print "\nIntroduzca el peso de las",series_3,"series de dominadas de la semana "+semana+": "
+		
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
-		global pdominadas
-		pdominadas.append(peso)
+		for p in range(series_3):
+			
+			global pdominadas
+			pdominadas.append(peso)
 		
 def remo_menton():
 
-	print "Por favor, introduzca los valores de las tres series de remo menton de la semana "+semana+": "
+	print "\nPor favor, introduzca los valores de las tres series de remo menton de la semana "+semana+": "
 	
-	for p in range(series_1):
+	for p in range(series_3):
 	
-		print "Introduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		global premo_menton
@@ -117,11 +139,11 @@ def remo_menton():
 		
 def sentadilla_hack():
 
-	print "Por favor, introduzca los valores de las tres series de sentadilla hack de la semana "+semana+": "
+	print "\nPor favor, introduzca los valores de las tres series de sentadilla hack de la semana "+semana+": "
 	
-	for p in range(series_2):
+	for p in range(series_4):
 	
-		print "Introduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		global psentadilla_hack
@@ -129,11 +151,11 @@ def sentadilla_hack():
 		
 def remo_punta():
 
-	print "Por favor, introduzca los valores de las tres series de remo en punta de la semana "+semana+": "
+	print "\nPor favor, introduzca los valores de las tres series de remo en punta de la semana "+semana+": "
 	
-	for p in range(series_1):
+	for p in range(series_3):
 	
-		print "Introduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		global premo_punta
@@ -143,11 +165,11 @@ def curl_biceps():
 
 	#Introducir en un futuro la opcion de los claster, que al meter las repes calcule los cluster, etc..
 	
-	print "Por favor, introduzca los valores de las tres series de curl de biceps de la semana "+semana+": "
+	print "\nPor favor, introduzca los valores de las tres series de curl de biceps de la semana "+semana+": "
 	
-	for p in range(series_0):
+	for p in range(series_2):
 	
-		print "Introduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		global pcurl_biceps
@@ -155,11 +177,11 @@ def curl_biceps():
 
 def jalon_pecho():
 
-	print "Por favor, introduzca los valores de las tres series de jalon de pecho de la semana "+semana+": "
+	print "\nPor favor, introduzca los valores de las tres series de jalon de pecho de la semana "+semana+": "
 	#Implementar el numero de variables dinamicas, ya que cada semana cambia
-	for p in range(series_1):
+	for p in range(series_4):
 	
-		print "Introduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		global pjalon_pecho
@@ -167,11 +189,11 @@ def jalon_pecho():
 		
 def extension_cuadri():
 
-	print "Por favor, introduzca los valores de las tres series de extension de cuadriceps de la semana "+semana+": "
+	print "\nPor favor, introduzca los valores de las tres series de extension de cuadriceps de la semana "+semana+": "
 	
-	for p in range(series_2):
+	for p in range(series_4):
 	
-		print "Introduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		global pextension_cuadri
@@ -179,11 +201,11 @@ def extension_cuadri():
 
 def curl_femoral():
 
-	print "Por favor, introduzca los valores de las tres series de curl femoral de la semana "+semana+": "
+	print "\nPor favor, introduzca los valores de las tres series de curl femoral de la semana "+semana+": "
 	
-	for p in range(series_2):
+	for p in range(series_4):
 	
-		print "Introduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		global pcurl_femoral
@@ -191,11 +213,11 @@ def curl_femoral():
 		
 def triceps_polea_cabeza():
 
-	print "Por favor, introduzca los valores de las tres series de triceps en polea por encima de la cabeza de la semana "+semana+": "
+	print "\nPor favor, introduzca los valores de las tres series de triceps en polea por encima de la cabeza de la semana "+semana+": "
 	
-	for p in range(series_0):
+	for p in range(series_2):
 	
-		print "Introduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		global ptriceps_polea_cabeza
@@ -203,11 +225,11 @@ def triceps_polea_cabeza():
 		
 def encogimientos_mancu():
 
-	print "Por favor, introduzca los valores de las tres series de encogimientos con mancuernas de la semana "+semana+": "
+	print "\nPor favor, introduzca los valores de las tres series de encogimientos con mancuernas de la semana "+semana+": "
 	
-	for p in range(series_0):
+	for p in range(series_2):
 	
-		print "Introduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		global pencogimientos_mancu
@@ -263,7 +285,7 @@ def formatea():
 	
 	sys.stdout = open("entreno_mes"+mes+"_semana"+semana+".doc", "w")
 
-	print "\nLunes:\n"
+	print "Lunes:\n"
 	
 	print "Sentadilla:",
 		
