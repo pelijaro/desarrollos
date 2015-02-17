@@ -29,13 +29,16 @@ print "\n¡Bienvenido a la interfaz de introducción de datos de entrenamiento! 
 
 def mes_in():
 
+	#MEJORAR LA INTRODUCCIÓN DEL MES, YA QUE AL INTRODUCIR LETRAS O SIMBOLOS CRASEA.
+
 	m=raw_input("\nPor favor, introduzca el mes correspondiente a los valores a añadir (valor numérico): ")
 	m=int(m)
-	if m<=0 or m>99:
-	
+	print m
+	while m<=0 or m>99:
+		
 		print "\nMes incorrecto, introduzcalo como se indica"
-		#Si el mes introducido es incorrecto, se vuelve a llamar a la función mes_in. 
-		mes_in()
+		m=raw_input("\nPor favor, introduzca el mes correspondiente a los valores a añadir (valor numérico): ")
+		m=int(m)
 		
 	else:
 	
@@ -43,6 +46,7 @@ def mes_in():
 		mes=m
 		
 		print "\nMes correcto"
+		
 		
 def semana_in():	
 	#En esta función se define el mes y la semana de la que se están introduciendo valores
@@ -280,6 +284,8 @@ def formatea():
 
 	"""Como no sé cómo no sobreescribir en un fichero, lo tengo que formatear todo junto en vez de separado, cuando sepa como sobreescribir lo podre hacer por
 	separado"""
+	
+	#Paso mes a string para poder utilizarlo en el nombre del fichero
 	global mes
 	mes=str(mes)
 	
