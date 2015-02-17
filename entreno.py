@@ -14,7 +14,7 @@ rdominadas=[]
 
 psentadilla=[]
 ppress_banca=[]
-pdominadas=[]
+pdominadas=0
 premo_menton=[]
 psentadilla_hack=[]
 premo_punta=[]
@@ -123,11 +123,8 @@ def dominadas():
 		print "\nIntroduzca el peso de las",series_3,"series de dominadas de la semana "+semana+": "
 		
 		peso=raw_input()
-		#Colocar en un futuro un posible control de errores para la introducción de pesos
-		for p in range(series_3):
-			
-			global pdominadas
-			pdominadas.append(peso)
+		global pdominadas
+		pdominadas=peso
 		
 def remo_menton():
 
@@ -289,7 +286,7 @@ def formatea():
 	global mes
 	mes=str(mes)
 	
-	sys.stdout = open("entreno_mes"+mes+"_semana"+semana+".doc", "w")
+	sys.stdout = open("/home/entrenos/entreno_mes"+mes+"_semana"+semana+".doc", "w")
 
 	print "Lunes:\n"
 	
@@ -318,16 +315,22 @@ def formatea():
 			print ppress_banca[p]+",",
 				
 	print "Dominadas:",
+	
+	if semana=="1":
+	
+		for p in range(len(rdominadas)):
 		
-	for p in range(len(pdominadas)):
-		
-		if p==len(pdominadas)-1:
+			if p==len(rdominadas)-1:
 			
-			print pdominadas[p]
+				print "1x"+rdominadas[p]+" repeticiones"
 				
-		else:
+			else:
 			
-			print pdominadas[p]+",",
+				print "1x"+rdominadas[p]+",",
+				
+	else:
+	
+		print series_3,"x",rdominadas[0],"con", pdominadas,"kg de lastre"
 				
 	print "Remo al menton con barra Z:",
 		
@@ -465,6 +468,7 @@ def formatea():
 			
 			print pencogimientos_mancu[p]+",",
 
+			
 mes_in()			
 semana_in()
 sentadilla()
