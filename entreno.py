@@ -77,8 +77,14 @@ def sentadilla():
 		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
-		global psentadilla
-		psentadilla.append(peso)
+		if len(peso)==0 or peso==chr(32):
+			
+			global psentadilla
+			psentadilla.append(0)
+		
+		else:
+		
+			psentadilla.append(peso)
 	
 
 def press_banca():
@@ -300,7 +306,7 @@ def formatea():
 			
 		else:
 			
-			print psentadilla[p]+",",
+			print str(psentadilla[p])+",",
 
 	print "Press banca con parada en pecho:",
 		
