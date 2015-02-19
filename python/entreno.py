@@ -25,7 +25,8 @@ pcurl_femoral=[]
 ptriceps_polea_cabeza=[]
 pencogimientos_mancu=[]
 
-print "\n¡Bienvenido a la interfaz de introducción de datos de entrenamiento! \n"
+#def control_datos():
+
 
 def mes_in():
 
@@ -599,6 +600,8 @@ def formatea():
 			print str(pencogimientos_mancu[p])+",",
 
 			
+print "\n¡Bienvenido a la interfaz de introducción de datos de entrenamiento! \n"
+
 mes_in()			
 semana_in()
 sentadilla()
