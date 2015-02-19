@@ -25,6 +25,7 @@ def suma_de_digitos(n):
 	if longitud==1:
 
 		return n
+		
 	else:
 
 		for c in range(longitud-1):
@@ -48,4 +49,4 @@ def suma_de_digitos(n):
 
 		return total
 
-print suma_de_digitos(5)
+print suma_de_digitos(434092858094309348409312312394329432094849048930483094328430948329083934839403820984329**323)
