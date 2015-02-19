@@ -76,7 +76,11 @@ def sentadilla():
 		
 		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
+		
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
+		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
+		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
+		
 		if len(peso)==0 or peso==chr(32):
 			
 			global psentadilla
@@ -97,9 +101,19 @@ def press_banca():
 	
 		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
+		
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
-		global ppress_banca
-		ppress_banca.append(peso)
+		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
+		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
+		
+		if len(peso)==0 or peso==chr(32):
+			
+			global ppress_banca
+			ppress_banca.append(0)
+		
+		else:
+		
+			ppress_banca.append(peso)
 
 def dominadas():
 	
@@ -111,8 +125,18 @@ def dominadas():
 		
 			print "\nIntroduzca las repeticiones de la ", p+1,"º serie: "
 			peso=raw_input()
-			global rdominadas
-			rdominadas.append(peso)
+			
+		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
+		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
+		
+			if len(peso)==0 or peso==chr(32):
+			
+				global rdominadas
+				rdominadas.append(0)
+			
+			else:
+			
+				rdominadas.append(peso)
 			
 	else:
 			
@@ -122,15 +146,31 @@ def dominadas():
 	
 		peso=raw_input()
 		
-		for p in range(series_3):
+		if len(peso)==0 or peso==chr(32):
 		
-			rdominadas.append(peso)
+			for p in range(series_3):
+			
+				rdominadas.append(0)
+			
+		else:
 		
+			for p in range(series_3):
+			
+				rdominadas.append(peso)
+			
 		print "\nIntroduzca el peso de las",series_3,"series de dominadas de la semana "+semana+": "
 		
 		peso=raw_input()
-		global pdominadas
-		pdominadas=peso
+		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
+		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
+		if len(peso)==0 or peso==chr(32):
+			
+			global pdominadas
+			psentadilla=0
+		
+		else:
+		
+			pdominadas=peso
 		
 def remo_menton():
 
@@ -140,9 +180,19 @@ def remo_menton():
 	
 		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
+		
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
-		global premo_menton
-		premo_menton.append(peso)
+		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
+		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
+		
+		if len(peso)==0 or peso==chr(32):
+			
+			global premo_menton
+			premo_menton.append(0)
+		
+		else:
+		
+			premo_menton.append(peso)
 		
 def sentadilla_hack():
 
@@ -153,8 +203,17 @@ def sentadilla_hack():
 		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
-		global psentadilla_hack
-		psentadilla_hack.append(peso)
+		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
+		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
+		
+		if len(peso)==0 or peso==chr(32):
+			
+			global psentadilla_hack
+			psentadilla_hack.append(0)
+		
+		else:
+		
+			psentadilla_hack.append(peso)
 		
 def remo_punta():
 
@@ -165,9 +224,18 @@ def remo_punta():
 		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
-		global premo_punta
-		premo_punta.append(peso)
-
+		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
+		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
+		
+		if len(peso)==0 or peso==chr(32):
+			
+			global premo_punta
+			premo_punta.append(0)
+		
+		else:
+		
+			premo_punta.append(peso)
+			
 def curl_biceps():
 
 	#Introducir en un futuro la opcion de los claster, que al meter las repes calcule los cluster, etc..
@@ -179,8 +247,17 @@ def curl_biceps():
 		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
-		global pcurl_biceps
-		pcurl_biceps.append(peso)
+		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
+		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
+		
+		if len(peso)==0 or peso==chr(32):
+			
+			global pcurl_biceps
+			pcurl_biceps.append(0)
+		
+		else:
+		
+			pcurl_biceps.append(peso)
 
 def jalon_pecho():
 
@@ -191,8 +268,17 @@ def jalon_pecho():
 		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
-		global pjalon_pecho
-		pjalon_pecho.append(peso)
+		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
+		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
+		
+		if len(peso)==0 or peso==chr(32):
+			
+			global pjalon_pecho
+			pjalon_pecho.append(0)
+		
+		else:
+		
+			pjalon_pecho.append(peso)
 		
 def extension_cuadri():
 
@@ -203,9 +289,18 @@ def extension_cuadri():
 		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
-		global pextension_cuadri
-		pextension_cuadri.append(peso)
-
+		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
+		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
+		
+		if len(peso)==0 or peso==chr(32):
+			
+			global pextension_cuadri
+			pextension_cuadri.append(0)
+		
+		else:
+		
+			pextension_cuadri.append(peso)
+			
 def curl_femoral():
 
 	print "\nPor favor, introduzca los valores de las tres series de curl femoral de la semana "+semana+": "
@@ -215,8 +310,17 @@ def curl_femoral():
 		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
-		global pcurl_femoral
-		pcurl_femoral.append(peso)
+		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
+		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
+		
+		if len(peso)==0 or peso==chr(32):
+			
+			global pcurl_femoral
+			pcurl_femoral.append(0)
+		
+		else:
+		
+			pcurl_femoral.append(peso)
 		
 def triceps_polea_cabeza():
 
@@ -227,9 +331,18 @@ def triceps_polea_cabeza():
 		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
-		global ptriceps_polea_cabeza
-		ptriceps_polea_cabeza.append(peso)
+		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
+		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
 		
+		if len(peso)==0 or peso==chr(32):
+			
+			global ptriceps_polea_cabeza
+			ptriceps_polea_cabeza.append(0)
+		
+		else:
+		
+			ptriceps_polea_cabeza.append(peso)
+			
 def encogimientos_mancu():
 
 	print "\nPor favor, introduzca los valores de las tres series de encogimientos con mancuernas de la semana "+semana+": "
@@ -239,8 +352,17 @@ def encogimientos_mancu():
 		print "\nIntroduzca el ", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
-		global pencogimientos_mancu
-		pencogimientos_mancu.append(peso)
+		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
+		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
+		
+		if len(peso)==0 or peso==chr(32):
+			
+			global pencogimientos_mancu
+			pencogimientos_mancu.append(0)
+		
+		else:
+		
+			pencogimientos_mancu.append(peso)
 		
 		
 #IDEA PARA EL FUTURO, FORMATEAR POR SEPARADO Y METER TODAS LAS FUNCIONES EN UNA FUNCIÓN PRINCIPAL
@@ -320,7 +442,7 @@ def formatea():
 			
 		else:
 			
-			print ppress_banca[p]+",",
+			print str(ppress_banca[p])+",",
 				
 	print "Dominadas:",
 	
@@ -330,11 +452,11 @@ def formatea():
 		
 			if p==len(rdominadas)-1:
 			
-				print "1x"+rdominadas[p]+" repeticiones"
+				print "1x"+str(rdominadas[p])+" repeticiones"
 				
 			else:
 			
-				print "1x"+rdominadas[p]+",",
+				print "1x"+str(rdominadas[p])+",",
 				
 	else:
 	
@@ -350,7 +472,7 @@ def formatea():
 			
 		else:
 			
-			print premo_menton[p]+",",
+			print str(premo_menton[p])+",",
 	
 	print "\nMiercoles:\n"
 	
@@ -364,7 +486,7 @@ def formatea():
 			
 		else:
 			
-			print ppress_banca[p]+",",
+			print str(ppress_banca[p])+",",
 				
 	print "Sentadilla hack:",
 		
@@ -376,7 +498,7 @@ def formatea():
 			
 		else:
 			
-			print psentadilla_hack[p]+",",
+			print str(psentadilla_hack[p])+",",
 				
 	print "Remo en punta:",
 		
@@ -388,7 +510,7 @@ def formatea():
 			
 		else:
 			
-			print premo_punta[p]+",",
+			print str(premo_punta[p])+",",
 				
 	print "Curl de biceps con barra en clusters:",
 		
@@ -400,7 +522,7 @@ def formatea():
 			
 		else:
 			
-			print pcurl_biceps[p]+",",
+			print str(pcurl_biceps[p])+",",
 				
 	print "\nViernes:\n"
 	
@@ -414,7 +536,7 @@ def formatea():
 			
 		else:
 			
-			print ppress_banca[p]+",",
+			print str(ppress_banca[p])+",",
 	
 	print "Jalon al pecho:",
 		
@@ -426,7 +548,7 @@ def formatea():
 			
 		else:
 			
-			print pjalon_pecho[p]+",",
+			print str(pjalon_pecho[p])+",",
 				
 	print "Extension de cuadriceps:",
 		
@@ -438,7 +560,7 @@ def formatea():
 			
 		else:
 			
-			print pextension_cuadri[p]+",",
+			print str(pextension_cuadri[p])+",",
 				
 	print "Curl de femoral:",
 		
@@ -450,7 +572,7 @@ def formatea():
 			
 		else:
 			
-			print pcurl_femoral[p]+",",
+			print str(pcurl_femoral[p])+",",
 			
 	print "Extension de triceps en polea por encima de la cabeza:",
 		
@@ -462,7 +584,7 @@ def formatea():
 			
 		else:
 			
-			print ptriceps_polea_cabeza[p]+",",
+			print str(ptriceps_polea_cabeza[p])+",",
 				
 	print "Encogimientos de trapecio con mancuernas:",
 		
@@ -474,7 +596,7 @@ def formatea():
 			
 		else:
 			
-			print pencogimientos_mancu[p]+",",
+			print str(pencogimientos_mancu[p])+",",
 
 			
 mes_in()			
