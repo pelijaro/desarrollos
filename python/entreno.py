@@ -1,11 +1,15 @@
 #!/usr/bin/ python
 # -*- coding: utf-8 -*-
+
 import sys
+
 #Script acepta valores de pesos de diferentes ejercicios, formatea datos y sale en un archivo preparado para enviar email
 
 semana=0
 mes=0
+
 #Implementar el numero de variables dinamicas
+
 series_2=2
 series_3=3
 series_4=4
@@ -25,7 +29,97 @@ pcurl_femoral=[]
 ptriceps_polea_cabeza=[]
 pencogimientos_mancu=[]
 
-#def control_datos():
+
+def limpia_dato(d):
+
+	#Función que limpia el dato introducido para que pueda ser comprobado en la siguiente función
+	
+	#Si, en el dato introducido, se encuentra un espacio en blanco y un punto 
+	
+	if (d.find(" ")!=-1 and d.find(".")!=-1):
+	
+		#Se reemplaza, el espacio en blanco o el punto, por una cadena vacia, es decir, se elimina
+		
+		d=d.replace(".","")
+		d=d.replace(" ","")
+		
+		#Se devuelve el dato "limpio"
+		
+		return d
+		
+	#Si, en el dato introducido, se encuentra un espacio en blanco 
+	
+	elif d.find(" ")!=-1:
+	
+		#Se reemplaza, el espacio en blanco, por una cadena vacia, es decir, se elimina
+		
+		d=d.replace(" ","")
+		
+		#Se devuelve el dato limpio
+		
+		return d
+		
+	#Si, en el dato introducido, se encuentra un espacio en blanco 
+	
+	elif d.find(".")!=-1:
+	
+		#Se reemplaza, el punto, por una cadena vacia
+		
+		d=d.replace(".","")
+		
+		#Se devuelve el dato "limpio"
+		
+		return d
+	
+	#Si no encuentra ni espacios en blanco ni puntos, se devuelve el dato segun se ha introducido
+	
+	else:
+		
+		#Se devuelve el dato segun se ha introducido
+		
+		return d
+		
+		
+def comprueba_datos(d):
+
+	#Función que comprueba que el número introducido sea realmente un número
+	
+	#Inicializa c a cero
+	
+	c=0
+	
+	#If que comprueba que la cadena no sea una cadena vacia
+	
+	if len(d)>0:
+	
+		#While que recorre carácter a carácter comprobando si son digitos
+		
+		while d[c].isdigit()==True:
+		
+			#Si es un digito y ademas es el ultimo, decuelve un False(que se utiliza en el while, para salir de este), verificando que la cadena está 
+			#compuesta de solo digitos
+			
+			if c==(len(d)-1):
+			
+				return False
+				
+			#Si es un digito pero no es el último, hace c+1, para poder seguir iterando por el numero	
+			
+			else:
+			
+				c+=1
+				
+		#En el momento que el numero contenga un carácter que no sea un digito, devolverá True, para que el ciclo while siga ejecutandose		
+		
+		else:
+		
+			return True
+			
+	#Si la cadena está vacia, devolverá True, para que el ciclo while siga ejecutandose
+	
+	else:
+	
+		return True
 
 
 def mes_in():
