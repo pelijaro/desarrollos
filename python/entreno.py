@@ -80,7 +80,7 @@ def limpia_dato(d):
 		return d
 		
 		
-def comprueba_datos(d):
+def comprueba_dato(d):
 
 	#Función que comprueba que el número introducido sea realmente un número
 	
@@ -145,7 +145,7 @@ def mes_in():
 		
 def semana_in():	
 	#En esta función se define el mes y la semana de la que se están introduciendo valores
-		
+	#HACERLA CON UN WHILE, MEJOR!!
 	s=raw_input("\nPor favor, introduzca la semana correspondiente a los valores a añadir (valor numérico): ")
 
 	if (s=="1" or s=="2" or s=="3" or s=="4"):
@@ -169,20 +169,22 @@ def sentadilla():
 	
 	for p in range(series_3):
 		
-		print "\nIntroduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el", p+1,"º peso: "
 		peso=raw_input()
 		
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
 		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
 		
-		if len(peso)==0 or peso==chr(32):
+		global psentadilla
+		
+		while comprueba_dato(limpia_dato(peso)):
+		
+			print "\nIntroduzca el", p+1,"º peso: "
+			peso=raw_input()
 			
-			global psentadilla
-			psentadilla.append(0)
-		
 		else:
-		
+			
 			psentadilla.append(peso)
 	
 
@@ -194,18 +196,19 @@ def press_banca():
 	
 	for p in range(series_3):
 	
-		print "\nIntroduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el", p+1,"º peso: "
 		peso=raw_input()
 		
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
 		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
+		global ppress_banca
 		
-		if len(peso)==0 or peso==chr(32):
+		while comprueba_dato(limpia_dato(peso)):
+		
+			print "\nIntroduzca el", p+1,"º peso: "
+			peso=raw_input()
 			
-			global ppress_banca
-			ppress_banca.append(0)
-		
 		else:
 		
 			ppress_banca.append(peso)
@@ -216,19 +219,22 @@ def dominadas():
 	
 		print "\nPor favor, introduzca el numero de repeticiones de cada serie de dominadas SIN LASTRE de la semana "+semana+": "
 		
+		global rdominadas
+		
 		for p in range(series_3):
 		
-			print "\nIntroduzca las repeticiones de la ", p+1,"º serie: "
+			print "\nIntroduzca las repeticiones de la", p+1,"º serie: "
 			peso=raw_input()
 			
 		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
 		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
-		
-			if len(peso)==0 or peso==chr(32):
 			
-				global rdominadas
-				rdominadas.append(0)
 			
+			while comprueba_dato(limpia_dato(peso)):
+			
+				print "\nIntroduzca las repeticiones de la", p+1,"º serie: "
+				peso=raw_input()
+				
 			else:
 			
 				rdominadas.append(peso)
@@ -240,12 +246,11 @@ def dominadas():
 		print "\nPor favor, introduzca el numero de repeticiones de las ", series_3," series de dominadas de la semana "+semana+": "
 	
 		peso=raw_input()
-		
-		if len(peso)==0 or peso==chr(32):
-		
-			for p in range(series_3):
 			
-				rdominadas.append(0)
+		while comprueba_dato(limpia_dato(peso)):
+		
+			print "\nPor favor, introduzca el numero de repeticiones de las ", series_3," series de dominadas de la semana "+semana+": "
+			peso=raw_input()
 			
 		else:
 		
@@ -256,13 +261,17 @@ def dominadas():
 		print "\nIntroduzca el peso de las",series_3,"series de dominadas de la semana "+semana+": "
 		
 		peso=raw_input()
+		
 		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
 		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
-		if len(peso)==0 or peso==chr(32):
-			
-			global pdominadas
-			psentadilla=0
 		
+		global pdominadas
+		
+		while comprueba_dato(limpia_dato(peso)):
+		
+			print "\nIntroduzca el peso de las",series_3,"series de dominadas de la semana "+semana+": "
+			peso=raw_input()
+			
 		else:
 		
 			pdominadas=peso
@@ -280,13 +289,15 @@ def remo_menton():
 		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
 		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
 		
-		if len(peso)==0 or peso==chr(32):
+		global premo_menton
+		
+		while comprueba_dato(limpia_dato(peso)):
+		
+			print "\nIntroduzca el", p+1,"º peso: "
+			peso=raw_input()
 			
-			global premo_menton
-			premo_menton.append(0)
-		
 		else:
-		
+			
 			premo_menton.append(peso)
 		
 def sentadilla_hack():
@@ -295,19 +306,21 @@ def sentadilla_hack():
 	
 	for p in range(series_4):
 	
-		print "\nIntroduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
 		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
 		
-		if len(peso)==0 or peso==chr(32):
+		global psentadilla_hack
+		
+		while comprueba_dato(limpia_dato(peso)):
+		
+			print "\nIntroduzca el", p+1,"º peso: "
+			peso=raw_input()
 			
-			global psentadilla_hack
-			psentadilla_hack.append(0)
-		
 		else:
-		
+			
 			psentadilla_hack.append(peso)
 		
 def remo_punta():
@@ -316,19 +329,21 @@ def remo_punta():
 	
 	for p in range(series_3):
 	
-		print "\nIntroduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
 		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
 		
-		if len(peso)==0 or peso==chr(32):
+		global premo_punta
+		
+		while comprueba_dato(limpia_dato(peso)):
+		
+			print "\nIntroduzca el", p+1,"º peso: "
+			peso=raw_input()
 			
-			global premo_punta
-			premo_punta.append(0)
-		
 		else:
-		
+			
 			premo_punta.append(peso)
 			
 def curl_biceps():
@@ -339,19 +354,21 @@ def curl_biceps():
 	
 	for p in range(series_2):
 	
-		print "\nIntroduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
 		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
 		
-		if len(peso)==0 or peso==chr(32):
+		global pcurl_biceps
+		
+		while comprueba_dato(limpia_dato(peso)):
+		
+			print "\nIntroduzca el", p+1,"º peso: "
+			peso=raw_input()
 			
-			global pcurl_biceps
-			pcurl_biceps.append(0)
-		
 		else:
-		
+			
 			pcurl_biceps.append(peso)
 
 def jalon_pecho():
@@ -360,19 +377,21 @@ def jalon_pecho():
 	#Implementar el numero de variables dinamicas, ya que cada semana cambia
 	for p in range(series_4):
 	
-		print "\nIntroduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
 		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
 		
-		if len(peso)==0 or peso==chr(32):
+		global pjalon_pecho
+		
+		while comprueba_dato(limpia_dato(peso)):
+		
+			print "\nIntroduzca el", p+1,"º peso: "
+			peso=raw_input()
 			
-			global pjalon_pecho
-			pjalon_pecho.append(0)
-		
 		else:
-		
+			
 			pjalon_pecho.append(peso)
 		
 def extension_cuadri():
@@ -381,19 +400,21 @@ def extension_cuadri():
 	
 	for p in range(series_4):
 	
-		print "\nIntroduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
 		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
 		
-		if len(peso)==0 or peso==chr(32):
+		global pextension_cuadri
+		
+		while comprueba_dato(limpia_dato(peso)):
+		
+			print "\nIntroduzca el", p+1,"º peso: "
+			peso=raw_input()
 			
-			global pextension_cuadri
-			pextension_cuadri.append(0)
-		
 		else:
-		
+			
 			pextension_cuadri.append(peso)
 			
 def curl_femoral():
@@ -402,19 +423,21 @@ def curl_femoral():
 	
 	for p in range(series_4):
 	
-		print "\nIntroduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
 		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
 		
-		if len(peso)==0 or peso==chr(32):
+		global pcurl_femoral
+		
+		while comprueba_dato(limpia_dato(peso)):
+		
+			print "\nIntroduzca el", p+1,"º peso: "
+			peso=raw_input()
 			
-			global pcurl_femoral
-			pcurl_femoral.append(0)
-		
 		else:
-		
+			
 			pcurl_femoral.append(peso)
 		
 def triceps_polea_cabeza():
@@ -423,19 +446,21 @@ def triceps_polea_cabeza():
 	
 	for p in range(series_2):
 	
-		print "\nIntroduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el", p+1,"º peso: "
 		peso=raw_input()
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
 		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
 		
-		if len(peso)==0 or peso==chr(32):
+		global ptriceps_polea_cabeza
+		
+		while comprueba_dato(limpia_dato(peso)):
+		
+			print "\nIntroduzca el", p+1,"º peso: "
+			peso=raw_input()
 			
-			global ptriceps_polea_cabeza
-			ptriceps_polea_cabeza.append(0)
-		
 		else:
-		
+			
 			ptriceps_polea_cabeza.append(peso)
 			
 def encogimientos_mancu():
@@ -444,19 +469,22 @@ def encogimientos_mancu():
 	
 	for p in range(series_2):
 	
-		print "\nIntroduzca el ", p+1,"º peso: "
+		print "\nIntroduzca el", p+1,"º peso: "
 		peso=raw_input()
+		
 		#Colocar en un futuro un posible control de errores para la introducción de pesos
 		#EL CONTROL DE ERRORES POR AHORA SOLO CONTEMPLA LA INTRODUCCIÓN DE UN ESPACIO O DE DARLE A ENTER, IMPLEMENTARLO EN TODOS DE FORMA COMPLETA
 		#CONTEMPLANDO LAS LETRAS Y CARACTERES ESPECIALES
 		
-		if len(peso)==0 or peso==chr(32):
+		global pencogimientos_mancu
+		
+		while comprueba_dato(limpia_dato(peso)):
+		
+			print "\nIntroduzca el", p+1,"º peso: "
+			peso=raw_input()
 			
-			global pencogimientos_mancu
-			pencogimientos_mancu.append(0)
-		
 		else:
-		
+			
 			pencogimientos_mancu.append(peso)
 		
 		
